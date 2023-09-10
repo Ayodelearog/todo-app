@@ -1,242 +1,258 @@
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+main {
+	max-height: 100vh;
+	overflow-y: hidden;
 }
 
 .main-container {
-  /* background-color: red; */
-  width: 90%;
-  height: 100vh;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  gap: 2%;
+	/* background-color: red; */
+	width: 90%;
+	max-height: 100vh;
+	margin: 0 auto;
+	display: flex;
+	justify-content: space-between;
+	gap: 2%;
+	padding: 32px 0;
 }
 
 .left-cont {
-  width: 65%;
-  height: 100vh;
-  overflow-y: hidden;
-  /* background-color: blueviolet; */
+	width: 65%;
+	height: 100vh;
+	overflow-y: hidden;
+	/* background-color: blueviolet; */
 }
 
 .right-cont {
-  max-width: 30%;
-  /* background-color: aquamarine; */
+	max-width: 30%;
+	/* background-color: aquamarine; */
+}
+
+.left-cont .task-heading {
+	color: #101828;
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 600;
+	line-height: 24px; /* 150% */
 }
 
 .todo-cont {
-  padding: 0 24px;
-  border-right: 1px solid hsla(220, 17%, 93%, 1);
-  height: 90%;
-  overflow-y: hidden;
-  overflow-y: scroll;
-  scroll-behavior: smooth;
+	padding: 0 24px;
+	border-right: 1px solid hsla(220, 17%, 93%, 1);
+	height: 80%;
+	overflow-y: hidden;
+	overflow-y: scroll;
+	scroll-behavior: smooth;
+	margin-top: 16px;
 }
 
 .todo-item {
-  width: 100%;
-  margin-top: 16px;
-  padding: 16px 24px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: 2px solid hsla(220, 17%, 93%, 1);
-  background: hsla(220, 17%, 93%, .6);
-  /* flex-wrap: wrap; */
+	width: 100%;
+	margin-top: 16px;
+	padding: 16px 24px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	border-bottom: 2px solid hsla(220, 17%, 93%, 1);
+	background: hsla(220, 17%, 93%, 0.6);
+	border-radius: 8px;
+	/* flex-wrap: wrap; */
 }
 
 .todo-item:active {
-  border-bottom: 1px solid #EAECF0;
-  background: #EAEDFE;
+	border-bottom: 1px solid #eaecf0;
+	background: #eaedfe;
 }
 
 .check-desc-wrapper {
-  display: flex;
-  gap: 1%;
-  align-items: center;
-  width: 100%;
+	display: flex;
+	gap: 1%;
+	align-items: center;
+	width: 100%;
 }
 
 .todo-check {
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  border: 1px solid #D0D5DD;
-  background: #FFF;
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	border: 1px solid #d0d5dd;
+	background: #fff;
 }
 
 .task-desc {
-  min-width: 80%;
-  padding-left: .5rem;
+	min-width: 80%;
+	padding-left: 0.5rem;
 }
 
 .value-paragraph {
-  word-wrap: break-word;
-  color:#101828;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 20px; /* 142.857% */
+	word-wrap: break-word;
+	color: #101828;
+	font-size: 14px;
+	font-style: normal;
+	font-weight: 500;
+	line-height: 20px; /* 142.857% */
 }
 
 .task-time {
-  color:#475467;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 20px; /* 142.857% */
+	color: #475467;
+	font-size: 14px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 20px; /* 142.857% */
 }
 
 .task-day {
-  color:#475467;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 20px; /* 142.857% */
+	color: #475467;
+	font-size: 14px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 20px; /* 142.857% */
 }
 
 .add-task-cont {
-  width: 100%;
-  padding: 24px 24px 0;
-  display: flex;
-  flex-direction: column;
-  border-radius: 8px;
-  border: 1px solid hsla(220, 17%, 93%, 1);
-  box-shadow: 2px 2px 2px ;
+	width: 100%;
+	padding: 24px 24px 0;
+	display: flex;
+	flex-direction: column;
+	border-radius: 8px;
+	border: 1px solid hsla(220, 17%, 93%, 1);
+	box-shadow: 0px 12px 9px -2px rgba(0, 0, 0, 0.14);
+	-webkit-box-shadow: 0px 12px 9px -2px rgba(0, 0, 0, 0.14);
+	-moz-box-shadow: 0px 12px 9px -2px rgba(0, 0, 0, 0.14);
 }
 
 .add-card-title {
-  color:#101828;
-  font-size: 18px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: 28px; /* 155.556% */
+	color: #101828;
+	font-size: 18px;
+	font-style: normal;
+	font-weight: 600;
+	line-height: 28px; /* 155.556% */
 }
 
 .title-textarea-wrapper {
-  display: flex;
-  gap: 16px;
-  flex-direction: column;
-  align-items: flex-start;
+	display: flex;
+	gap: 16px;
+	flex-direction: column;
+	align-items: flex-start;
 }
 
 .textarea {
-  width: 100%;
-  resize: none;
+	width: 100%;
+	resize: none;
+	padding: 4px 4px;
+	border: 1px solid #d0d5dd;
+	border-radius: 8px;
+	outline: none;
 }
 
 .cancel-add {
-  display: flex;
-  padding: 0px 0 24px;
-  align-items: flex-start;
-  gap: 12px;
-  align-self: stretch;
-  margin-top: 32px;
+	display: flex;
+	padding: 0px 0 24px;
+	align-items: flex-start;
+	gap: 12px;
+	align-self: stretch;
+	margin-top: 32px;
 }
 
 .cancel {
-  display: flex;
-  padding: 10px 18px;
-  justify-content: center;
-  align-items: center;
-  gap: 8px;
-  flex: 1 0 0;
-
-  border-radius: 8px;
-  border: 1px solid  #D0D5DD;
-  background:  #FFF;
-
-  /* Shadow/xs */
-  box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+	display: flex;
+	padding: 10px 18px;
+	justify-content: center;
+	align-items: center;
+	gap: 8px;
+	flex: 1 0 0;
+	border-radius: 8px;
+	border: 1px solid #d0d5dd;
+	background: #fff;
 }
 
 .add {
-  display: flex;
-  padding: 10px 16px;
-  justify-content: center;
-  align-items: center;
-  gap: 8px;
-  flex: 1 0 0;
-  color: #FFF;
-
-  border-radius: 8px;
-  border: 1px solid #3F5BF6;
-  background: #3F5BF6;
-
-  /* Shadow/xs */
-  box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+	display: flex;
+	padding: 10px 16px;
+	justify-content: center;
+	align-items: center;
+	gap: 8px;
+	flex: 1 0 0;
+	color: #fff;
+	border-radius: 8px;
+	border: 1px solid #3f5bf6;
+	background: #3f5bf6;
 }
 
 .checked {
-  color: #D0D5DD;
-  /* font-family: Inter; */
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 20px; /* 142.857% */
-  text-decoration-line: line-through;
+	color: #d0d5dd;
+	/* font-family: Inter; */
+	font-size: 14px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 20px; /* 142.857% */
+	text-decoration-line: line-through;
 }
 
 /* View Task component */
 
 .delete-edit {
-  width: 100%;
-  min-width: 290px;
-  padding: 24px 24px 0;
-  display: flex;
-  gap: 32px;
-  flex-direction: column;
-  border-radius: 8px;
-  border: 1px solid hsla(220, 17%, 93%, 1);
-  box-shadow: 2px 2px 2px ;
+	width: 100%;
+	min-width: 290px;
+	padding: 24px 24px 0;
+	display: flex;
+	gap: 32px;
+	flex-direction: column;
+	border-radius: 8px;
+	border: 1px solid hsla(220, 17%, 93%, 1);
+	box-shadow: 0px 12px 9px -2px rgba(0, 0, 0, 0.14);
+	-webkit-box-shadow: 0px 12px 9px -2px rgba(0, 0, 0, 0.14);
+	-moz-box-shadow: 0px 12px 9px -2px rgba(0, 0, 0, 0.14);
 }
 
 .viewTaskValue {
-  word-wrap: break-word;
-  color: #272727;
-  font-size: 18px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 120%; /* 21.6px */
+	word-wrap: break-word;
+	color: #272727;
+	font-size: 18px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: 120%; /* 21.6px */
 }
 
 .delete {
-  display: flex;
-  padding: 10px 16px;
-  justify-content: center;
-  align-items: center;
-  gap: 8px;
-  flex: 1 0 0;
-  color: #FFF;
+	display: flex;
+	padding: 10px 16px;
+	justify-content: center;
+	align-items: center;
+	gap: 8px;
+	flex: 1 0 0;
+	color: #fff;
 
-  border-radius: 8px;
-  border: 1px solid #3F5BF6;
-  background: #3F5BF6;
+	border-radius: 8px;
+	border: 1px solid #3f5bf6;
+	background: #3f5bf6;
 
-  /* Shadow/xs */
-  box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+	/* Shadow/xs */
+	box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
 }
 
 .edit {
-  display: flex;
-  padding: 10px 18px;
-  justify-content: center;
-  align-items: center;
-  gap: 8px;
-  flex: 1 0 0;
+	display: flex;
+	padding: 10px 18px;
+	justify-content: center;
+	align-items: center;
+	gap: 8px;
+	flex: 1 0 0;
 
-  border-radius: 8px;
-  border: 1px solid  #D0D5DD;
-  background:  #FFF;
+	border-radius: 8px;
+	border: 1px solid #d0d5dd;
+	background: #fff;
 
-  /* Shadow/xs */
-  box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+	/* Shadow/xs */
+	box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
 }
 
 .delete-edit .btn-wraper {
-  display: flex;
-  gap: 18px;
-  padding-bottom: 20px;
+	display: flex;
+	gap: 18px;
+	padding-bottom: 20px;
 }
