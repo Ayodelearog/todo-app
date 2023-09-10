@@ -23,11 +23,10 @@ export default function Home() {
 	}, []);
 
 	const addTodo = () => {
-
 		if (newTodo.trim() !== "") {
 			// Create a new todo object
 			const newTodoItem = { value: newTodo, id: uuidv4(), status: false };
-	
+
 			// Update the state
 			setTodos((prevTodos) => [newTodoItem, ...prevTodos]);
 
@@ -44,7 +43,7 @@ export default function Home() {
 		// update the status of the selected item
 		const updatedList = todos.map((todo) => {
 			if (todo.id === id) {
-				console.log(todo)
+				console.log(todo);
 				todo.status = !todo.status;
 			}
 			return todo;
@@ -56,7 +55,6 @@ export default function Home() {
 		// Find the todo with the specified ID
 		const selectedTodo = todos.find((todo) => todo.id === id);
 
-		
 		if (selectedTodo) {
 			// Toggle the visibility of the todo card
 			setViewTodoCard(!ViewTodoCard);
@@ -70,19 +68,18 @@ export default function Home() {
 		}
 	};
 
-	
 	const handleDelete = (selectedTodo) => {
-		
-
 		// Retrieve the entire list from local storage
 		const storedTodos = JSON.parse(localStorage.getItem("todos")) || [];
 
 		// Remove the item from the list
-		const updatedTodos = storedTodos.filter((todo) => todo.id !== selectedTodo.id);
-	
+		const updatedTodos = storedTodos.filter(
+			(todo) => todo.id !== selectedTodo.id
+		);
+
 		// Store the updated list back to local storage
 		localStorage.setItem("todos", JSON.stringify(updatedTodos));
-	
+
 		// Update the state
 		setTodos(updatedTodos);
 
@@ -101,28 +98,26 @@ export default function Home() {
 
 	const handleSave = (selectedTodo) => {
 		if (selectedTodo !== undefined) {
-
 			// Retrieve the entire list from local storage
 			const storedTodos = JSON.parse(localStorage.getItem("todos")) || [];
-		}
 
-		// Find the todo item to edit
-		const editTodo = storedTodos.find((todo) => todo.id === selectedTodo.id);
-		
+			// Find the todo item to edit
+			const editTodo = storedTodos.find((todo) => todo.id === selectedTodo.id);
 
-		// If the todo item was found, update its value
-		if (editTodo) {
-			editTodo.value = newTodo;
-			setCurrentValue(newTodo)
-			console.log(editTodo)
-
-			// Save the updated list back to local storage
-			localStorage.setItem("todos", JSON.stringify(storedTodos));
-
-			// Update the state
-			setTodos(storedTodos);
-			setNewTodo("");
-			setEditIsClicked(!editIsClicked)
+			// If the todo item was found, update its value
+			if (editTodo) {
+				editTodo.value = newTodo;
+				setCurrentValue(newTodo);
+				console.log(editTodo);
+	
+				// Save the updated list back to local storage
+				localStorage.setItem("todos", JSON.stringify(storedTodos));
+	
+				// Update the state
+				setTodos(storedTodos);
+				setNewTodo("");
+				setEditIsClicked(!editIsClicked);
+			}
 		}
 	};
 
@@ -154,8 +149,10 @@ export default function Home() {
 				<div className="right-cont">
 					{!ViewTodoCard && (
 						<AddCard
-							// key={id}
-							newTodo={newTodo}
+			
+			
+			
+						newTodo={newTodo}
 							setNewTodo={setNewTodo}
 							handleCancel={handleCancel}
 							handleSave={handleSave}
@@ -166,8 +163,6 @@ export default function Home() {
 					)}
 					{ViewTodoCard && (
 						<ViewTask
-							// key={2}
-
 							todos={todos}
 							setTodos={setTodos}
 							currentValue={currentValue}
