@@ -59,6 +59,9 @@ export default function Home() {
 			// Toggle the visibility of the todo card
 			setViewTodoCard(!ViewTodoCard);
 
+			// set the value of text area to value of selectedTodo
+			setNewTodo(selectedTodo.value);
+
 			// Set the current value to the value of the selected todo
 			setCurrentValue(selectedTodo.value);
 
