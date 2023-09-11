@@ -10,7 +10,6 @@ main {
 }
 
 .main-container {
-	/* background-color: red; */
 	width: 90%;
 	max-height: 100vh;
 	margin: 0 auto;
@@ -24,12 +23,10 @@ main {
 	width: 65%;
 	height: 100vh;
 	overflow-y: hidden;
-	/* background-color: blueviolet; */
 }
 
 .right-cont {
 	max-width: 30%;
-	/* background-color: aquamarine; */
 }
 
 .left-cont .task-heading {
@@ -37,17 +34,37 @@ main {
 	font-size: 16px;
 	font-style: normal;
 	font-weight: 600;
-	line-height: 24px; /* 150% */
+	line-height: 24px;
 }
 
 .todo-cont {
 	padding: 0 24px;
 	border-right: 1px solid hsla(220, 17%, 93%, 1);
 	height: 80%;
-	overflow-y: hidden;
-	overflow-y: scroll;
+	overflow-y: auto;
+	/* overflow-y: scroll; */
 	scroll-behavior: smooth;
 	margin-top: 16px;
+}
+  
+.todo-cont::-webkit-scrollbar {
+	width: 0;
+}
+  
+.todo-cont:hover::-webkit-scrollbar {
+	width: 4px;
+}
+  
+.todo-cont:hover::-webkit-scrollbar-track {
+	background: #f1f1f1;
+}
+  
+.todo-cont:hover::-webkit-scrollbar-thumb {
+	background: #888;
+}
+  
+.todo-cont:hover::-webkit-scrollbar-thumb:hover {
+	background: #7a7a7a;
 }
 
 .todo-item {
@@ -60,7 +77,6 @@ main {
 	border-bottom: 2px solid hsla(220, 17%, 93%, 1);
 	background: hsla(220, 17%, 93%, 0.6);
 	border-radius: 8px;
-	/* flex-wrap: wrap; */
 }
 
 .todo-item:active {
@@ -130,7 +146,7 @@ main {
 	font-size: 18px;
 	font-style: normal;
 	font-weight: 600;
-	line-height: 28px; /* 155.556% */
+	line-height: 28px;
 }
 
 .title-textarea-wrapper {
@@ -168,6 +184,12 @@ main {
 	border-radius: 8px;
 	border: 1px solid #d0d5dd;
 	background: #fff;
+	cursor: pointer;
+}
+
+.cancel:hover {
+	background-color: #d0d5dd;
+	transition: all ease-in-out .4s;
 }
 
 .add {
@@ -181,15 +203,24 @@ main {
 	border-radius: 8px;
 	border: 1px solid #3f5bf6;
 	background: #3f5bf6;
+	transition: all ease-in-out .4s;
+	cursor: pointer;
+}
+
+.add:hover {
+	background-color: transparent;
+	border: 1px solid #3f5bf6;
+	color: #3f5bf6;
+	font-weight: 600;
+
 }
 
 .checked {
 	color: #d0d5dd;
-	/* font-family: Inter; */
 	font-size: 14px;
 	font-style: normal;
 	font-weight: 400;
-	line-height: 20px; /* 142.857% */
+	line-height: 20px;
 	text-decoration-line: line-through;
 }
 
@@ -226,13 +257,19 @@ main {
 	gap: 8px;
 	flex: 1 0 0;
 	color: #fff;
-
 	border-radius: 8px;
 	border: 1px solid #3f5bf6;
 	background: #3f5bf6;
-
-	/* Shadow/xs */
 	box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+	transition: all ease-in-out .4s;
+	cursor: pointer;
+}
+
+.delete:hover {
+	background-color: transparent;
+	border: 1px solid #3f5bf6;
+	color: #3f5bf6;
+	font-weight: 600;
 }
 
 .edit {
@@ -242,13 +279,17 @@ main {
 	align-items: center;
 	gap: 8px;
 	flex: 1 0 0;
-
 	border-radius: 8px;
 	border: 1px solid #d0d5dd;
 	background: #fff;
-
-	/* Shadow/xs */
 	box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+	background: #fff;
+	cursor: pointer;
+}
+
+.edit:hover {
+	background-color: #d0d5dd;
+	transition: all ease-in-out .4s;
 }
 
 .delete-edit .btn-wraper {
